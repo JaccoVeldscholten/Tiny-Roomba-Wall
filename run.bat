@@ -24,7 +24,7 @@ if "%1"=="buildflash" (
     docker cp avr-toolchain:/build/main.bin ./bin/
     docker cp avr-toolchain:/build/main.hex ./bin/
     echo Build Done
-    launcher -cdigispark --timeout 60 -Uflash:w/:main.hex:i 
+    launcher -cdigispark --timeout 60 -Uflash:w:bin\main.hex:i
     echo Flash Done
 
     
