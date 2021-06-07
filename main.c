@@ -3,12 +3,11 @@
 #include <util/delay.h>
 
 int main(void)
-        {
-        DDRB  |= _BV(PB1);
-
-        while(1)
-                {
-                _delay_ms(1000);
-                PORTB ^= _BV(PB1);
-                }
-        }
+{
+    DDRB  |= _BV(PB1);
+    while(1)
+    {
+        _delay_ms(1000);
+        PORTB ^= _BV(PB1);
+    }
+}
