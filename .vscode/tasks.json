@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build on Windows",
+            "type": "shell",
+            "command": "${workspaceFolder}/run.bat build",
+            "group": "build",
+        },
+        {
+            "label": "Flash by Windows",
+            "type": "shell",
+            "command": "${workspaceFolder}/run.bat flash",
+            "group": "build",
+        },
+        {
+            "label": "Build Flash by Windows",
+            "type": "shell",
+            "command": "${workspaceFolder}/run.bat buildflash",
+            "group": "build",
+        },
+        {
+            "label": "Clean by Windows",
+            "type": "shell",
+            "command": "${workspaceFolder}/run.bat clean",
+            "group": "build",
+        },
+        {
+            "label": "Start Container by Windows",
+            "type": "shell",
+            "command": "${workspaceFolder}/run.bat rundocker",
+            "group": "build",
+        },
+        // ToDo: Linux Tasks. Sudo issue needs to be solved. Because its not possible to start VsCode as SU. (Not Recommended)
+    ]
+}
