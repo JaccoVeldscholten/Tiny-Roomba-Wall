@@ -2,7 +2,8 @@
 
 echo (Commando to exectute:  %1)
 
-if "%1"=="flash" (launcher -cdigispark --timeout 60 -Uflash:w:bin\main.hex:i)
+if "%1"=="flash-usb" (launcher -cdigispark --timeout 60 -Uflash:w:bin\main.hex:i)
+if "%1"=="flash-usbasp" (avrdude -c usbasp -p t85 -B 0.5 -F -U flash:w:".\bin\main.hex":a)
 
 if "%1"=="build" (
     rmdir /s /q bin 
@@ -15,7 +16,7 @@ if "%1"=="build" (
     echo Build Done
 )
 
-if "%1"=="buildflash" (
+if "%1"=="buildflash-usb" (
     rmdir /s /q bin 
     docker cp . avr-toolchain:/build
     docker exec -i avr-toolchain bash -c "avr-gcc -Wall -g -Os -mmcu=attiny85 -o main.bin main.c"
@@ -26,8 +27,19 @@ if "%1"=="buildflash" (
     echo Build Done
     launcher -cdigispark --timeout 60 -Uflash:w:bin\main.hex:i
     echo Flash Done
+)
 
-    
+if "%1"=="buildflash-usbasp" (
+        rmdir /s /q bin 
+    docker cp . avr-toolchain:/build
+    docker exec -i avr-toolchain bash -c "avr-gcc -Wall -g -Os -mmcu=attiny85 -o main.bin main.c"
+    docker exec -i avr-toolchain bash -c "avr-objcopy -j .text -j .data -O ihex main.bin main.hex"
+    mkdir bin    
+    docker cp avr-toolchain:/build/main.bin ./bin/
+    docker cp avr-toolchain:/build/main.hex ./bin/
+    echo Build Done
+    avrdude -c usbasp -p t85 -B 0.5 -F -U flash:w:".\bin\main.hex":a 
+    echo Flash Done
 )
 
 if "%1"=="clean" (

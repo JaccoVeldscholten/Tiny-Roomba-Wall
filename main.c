@@ -1,6 +1,6 @@
 // Using 4Mhz for Low Power
 // ATtiny25V/45V/85V: 0 – 4 MHz @ 1.8 - 5.5V
-#define F_CPU 4000000UL
+#define F_CPU 16500000UL
 
 
 #include <avr/io.h>
@@ -30,6 +30,21 @@
 */
 
 
+//3 Pulsen daarna Pauze
+
+//1e Puls: 0.5ms aan. IR aan
+//Delay:   7.5ms uit. IR uit
+//2e Puls: 0.5ms aan. IR aan
+//Delay:   7.5ms uit. IR uit
+//3e Puls: 0.5ms aan. IR aan
+//Delay:   108ms. IR uit.
+
+//Loop.
+
+
+
+
+
 #define LEDPIN PB0
 
 void init(void){
@@ -49,8 +64,11 @@ void init(void){
 }
 
 
-void BlinkLed(void){
-
+void PulseWall(void){
+    TCCR0A |= (1 << COM0A0);
+    _delay_ms(0.5);
+    TCCR0A &= ~(1 << COM0A0);
+    _delay_ms(7.5);
 }
 
 int main(void)
@@ -58,9 +76,9 @@ int main(void)
     init();
     while(1)
     {
-       // PORTB |= _BV(LEDPIN);
-       // _delay_ms(100);
-       // PORTB &= ~_BV(LEDPIN);
-       // _delay_ms(100);
+        PulseWall();
+        PulseWall();
+        PulseWall();
+        _delay_ms(100.5); /* Delay = 108 - 7.5 (last pulse) */
     }
 }
