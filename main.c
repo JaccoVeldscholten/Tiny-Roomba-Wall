@@ -32,20 +32,17 @@
 
 // 3 pulses Measured Then Pause
 
-//1e Puls: 0.5ms on. IR aan
-//Delay:   7.5ms uit. IR uit
-//2e Puls: 0.5ms aan. IR aan
-//Delay:   7.5ms uit. IR uit
-//3e Puls: 0.5ms aan. IR aan
-//Delay:   108ms. IR uit.
+//1e Pulse:     0.5ms on. IR off
+//Delay:        7.5ms off. IR off
+//2e Pulse:     0.5ms on. IR on
+//Delay:        7.5ms off. IR off
+//3e Pulse:     0.5ms on. IR on
+//Delay:        108ms. IR off.
 
 //Loop.
 
 
-
-
-
-#define LEDPIN PB0
+#define LEDPIN PB0          // Defined IR Led Pin
 
 void init(void){
     /* Enable GPIO */
@@ -73,10 +70,10 @@ void PulseWall(void){
 
 int main(void)
 {
-    init();
+    init();                 /* Tmer Setup */
     while(1)
     {
-        PulseWall();
+        PulseWall();        /* Call Pulses */
         PulseWall();
         PulseWall();
         _delay_ms(100.5); /* Delay = 108 - 7.5 (last pulse) */
