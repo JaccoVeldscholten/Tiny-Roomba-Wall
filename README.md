@@ -1,6 +1,6 @@
 [![CI](https://github.com/JaccoVeldscholten/Tiny-Roomba-Wall/actions/workflows/build.yml/badge.svg)](https://github.com/JaccoVeldscholten/Tiny-Roomba-Wall/actions/workflows/build.yml)
 
-# Attiny85 Roomba Virtual Wall
+# Attiny85 / Atmega328 Roomba Virtual Wall
 
 For roomba 500-, 600-, 700-, 800-, 900-serie & Scooba 400-serie
 
@@ -12,6 +12,7 @@ In my case I had to create as small a virtual wall as possible for under the rad
 
 The choice for an Attiny85 is because this is a light and cheap microcontroller. In sleep mode, the Attiny consumes little power, so 2 AA batteries or a button cell are sufficient.
 
+The project is also working on questions from the community for Atmega328.
 
 ## To Pulse or Not to Pulse?
 To receive the signal, an infrared receiver was used on a logic analyzer. The virtual wall constantly sent the same signal. By repeating this signal, the roomba will think it is a virtual wall.

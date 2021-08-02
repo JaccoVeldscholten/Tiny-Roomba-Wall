@@ -22,20 +22,23 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Compiled hex
-          path: main.hex
+          path: main_attiny85.hex
 
       - name: Artifact Compiled main.bin 
         uses: actions/upload-artifact@v2
         with:
           name: Compiled bin
-          path: main.bin
+          path: main_attiny85.bin
+
 
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
-          title: "Development Build"
+          title: "Tiny Roomba Wall Release"
           files: |
-            main.bin
-            main.hex
+            main_attiny85.bin
+            main_attiny85.hex
+            main_atmega328.bin
+            main_atmega328.hex
