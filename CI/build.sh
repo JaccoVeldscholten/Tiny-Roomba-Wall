@@ -1,4 +1,4 @@
 #!/bin/bash
 
-apt get update -y
-apt-get install -y gcc-avr
+sudo apt get update -y
+sudo apt-get install -y gcc-avr
