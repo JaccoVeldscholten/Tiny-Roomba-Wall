@@ -2,24 +2,14 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
-
-  workflow_dispatch:
+    branches: [ master ]
 
 jobs:
   build:
+    runs-on: ubuntu-latest
 
     steps:
-       uses: jjveldscholten/arm_riot_toolchain:latest
-       
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout code
-        uses: actions/checkout@v2
-        
-      - name: Building Code
-        run: |
-          avr-gcc -Wall -g -Os -mmcu=attiny85 -o main.bin main.c,
-          avr-objcopy -j .text -j .data -O ihex main.bin main.hex.
-        
+    - uses: actions/checkout@master
+    - uses: bazhenov/action-avr-make@v1.0
