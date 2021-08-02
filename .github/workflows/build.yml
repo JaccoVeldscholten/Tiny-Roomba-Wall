@@ -10,10 +10,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container: jjveldscholten/arm_riot_toolchain:latest
 
     steps:
+       uses: jjveldscholten/arm_riot_toolchain:latest
+       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout code
         uses: actions/checkout@v2
