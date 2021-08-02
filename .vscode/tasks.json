@@ -8,15 +8,27 @@
             "group": "build",
         },
         {
-            "label": "Flash by Windows",
+            "label": "Flash by Windows USB",
             "type": "shell",
-            "command": "${workspaceFolder}/run.bat flash",
+            "command": "${workspaceFolder}/run.bat flash-usb",
             "group": "build",
         },
         {
-            "label": "Build Flash by Windows",
+            "label": "Flash by Windows USB ASP",
             "type": "shell",
-            "command": "${workspaceFolder}/run.bat buildflash",
+            "command": "${workspaceFolder}/run.bat flash-usbasp",
+            "group": "build",
+        },
+        {
+            "label": "Build Flash by Windows USB",
+            "type": "shell",
+            "command": "${workspaceFolder}/run.bat buildflash-usb",
+            "group": "build",
+        },
+        {
+            "label": "Build Flash by Windows USB ASP",
+            "type": "shell",
+            "command": "${workspaceFolder}/run.bat buildflash-usbasp",
             "group": "build",
         },
         {
