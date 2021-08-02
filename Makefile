@@ -1,9 +1,8 @@
 DEVICE     = attiny85
-CLOCK      = 8000000
 PROGRAMMER = stk500v1
 BAUD       = 19200
 FILENAME   = main
-COMPILE    = avr-gcc -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE)
+COMPILE    = avr-gcc -Wall -Os -mmcu=$(DEVICE)
 
 all: build clean
 	
