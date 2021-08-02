@@ -43,6 +43,6 @@
             "command": "${workspaceFolder}/run.bat rundocker",
             "group": "build",
         },
-        // ToDo: Linux Tasks. Sudo issue needs to be solved. Because its not possible to start VsCode as SU. (Not Recommended)
+        // Linux comments are under build.sh flashing is possible with AVRdude
     ]
 }
