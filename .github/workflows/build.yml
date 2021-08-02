@@ -10,7 +10,8 @@ on:
 
 jobs:
   build:
-    runs-on: jjveldscholten/arm_riot_toolchain:latest
+    runs-on: ubuntu-latest
+    container: jjveldscholten/arm_riot_toolchain:latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
