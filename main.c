@@ -30,9 +30,9 @@
 */
 
 
-//3 Pulsen daarna Pauze
+// 3 pulses Measured Then Pause
 
-//1e Puls: 0.5ms aan. IR aan
+//1e Puls: 0.5ms on. IR aan
 //Delay:   7.5ms uit. IR uit
 //2e Puls: 0.5ms aan. IR aan
 //Delay:   7.5ms uit. IR uit
@@ -54,10 +54,10 @@ void init(void){
     /* Clean Timers */
     TCNT0 = 0;                   /* Reset Counter Timer 0 */
     TCCR0A = 0;                  /* Clean Timer0 A */
-	TCCR0B = 0;                  /* Clean Timer0 B */
+    TCCR0B = 0;                  /* Clean Timer0 B */
 
     /* Initilize Timers Toggle for IR */
-	TCCR0A |= (1 << COM0A0);	/* Timer0 Toggle Pin Mode           Table Ref: 11-2 */ 
+    TCCR0A |= (1 << COM0A0);	/* Timer0 Toggle Pin Mode           Table Ref: 11-2 */ 
     TCCR0A |= (1 << WGM01);     /* Timer0 CTC (Compare Match)       Table Ref: 11-5 */
     TCCR0B |= (1 << CS01);	    /* Timer0 Prescaler on Zero         Table Ref: 11-6 */
     OCR0A = 26;                 /* Timer0 CTC Value */
