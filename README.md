@@ -14,9 +14,9 @@ The choice for an Attiny85 is because this is a light and cheap microcontroller.
 ## To Pulse or Not to Pulse?
 To receive the signal, an infrared receiver was used on a logic analyzer. The virtual wall constantly sent the same signal. By repeating this signal, the roomba will think it is a virtual wall.
 
-** Overview Multiple pulses **
+**Overview Multiple pulses**
 ![image](images/sig1.png)
-** Overview Single pulses **
+**Overview Single pulses**
 ![image](images/sig2.png)
 
 
