@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build AVR
-        run: bash ci/build.sh
+        run: bash CI/build.sh
