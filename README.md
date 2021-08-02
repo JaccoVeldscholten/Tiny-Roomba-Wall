@@ -1,3 +1,5 @@
+[![CI](https://github.com/JaccoVeldscholten/Tiny-Roomba-Wall/actions/workflows/build.yml/badge.svg)](https://github.com/JaccoVeldscholten/Tiny-Roomba-Wall/actions/workflows/build.yml)
+
 # Attiny85 Roomba Virtual Wall
 
 For roomba 500-, 600-, 700-, 800-, 900-serie & Scooba 400-serie
