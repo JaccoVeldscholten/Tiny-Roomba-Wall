@@ -17,3 +17,15 @@ jobs:
 
       - name: Build AVR
         run: bash CI/build.sh
+
+      - name: Artifact Compiled main.hex 
+        uses: actions/upload-artifact@v2
+        with:
+          name: Compiled hex
+          path: main.hex
+
+      - name: Artifact Compiled main.bin 
+        uses: actions/upload-artifact@v2
+        with:
+          name: Compiled bin
+          path: bin.hex
